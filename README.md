@@ -1,5 +1,5 @@
 # SolarView: A Contextual Database of Solar Adoption in Georgia, U.S.A.
-
+[![DOI](https://zenodo.org/badge/155279543.svg)](https://zenodo.org/badge/latestdoi/155279543)
 This dataset is an attempt to bridge the local-national gap regarding solar PV adoption in the state of Georgia (U.S.A.). This dataset is an aggregation of variables from seven different publicly-available sources that was designed to help researchers interested in the context underlying solar adoption on the local scale of governance (e.g. the county level). The SolarView database includes information necessary for informing policymaking activities such as solar installation information, a historical county zip code directory, county-level census data, housing value indexes, renewable energy incentive totals, PV rooftop suitability percentages, and utility rates. As this is a database from multiple sources, incomplete data entries are noted.
 
 This dataset is compiled from seven, pre-existing independent databases:
