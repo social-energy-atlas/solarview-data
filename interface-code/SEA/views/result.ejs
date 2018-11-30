@@ -1,0 +1,79 @@
+<!doctype hmtl>
+<html>
+	<head>
+		<title>Social Energy Atlas | <%= title %></title>
+		<%- include('partials/header'); %>
+		<link rel="stylesheet" href="/css/result.css">
+	</head>
+	<body>
+		<%- include('partials/navbar'); %>
+		<input id="file" type="hidden" value="<%- title %>"/>
+		<div class="row">
+			<div class="col-md-6">
+				<div id="mapid"></div>
+				<script src="/js/result.js"></script>
+			</div>
+			<div id="description" class="col-md-6">
+				<h1><%- title %>  County</h1>
+				<h6 id="adoption"></h6>
+				<div id="bio">
+					 <p><%-info['county-bio'] %></p>
+				</div>
+				<h2 id="social">Social Energy Atlas</h2>
+				<div id="assigned">
+					<h4 id="interviewer">Field Interviewer: </h4>
+					<a id="person" href="<%- info['interviewer-url'] %>">
+						<%- info['interviewer-assigned'] %>
+					</a>
+				</div>
+				<h6 id="status"><%- info['interview-status']  %></h6>
+			</div>
+		</div>
+		<div class="row">
+			<!--
+			<div class="col-md-6">
+				<h3 id="social">Social Energy Atlas Field Data</h3>
+				<h4 id="interviewer">Assigned Field:</h4>
+				<a id="person" href="<%- info['interviewer-url'] %>"><%- info['interviewer-assigned']  %></a>
+			</div>
+			<div class="col-md-6">
+				<h3 id="demo">Demographics</h3>
+				<div id="data">
+					<h4>Total Population: <%- info['pop-tot'] %></h4>
+					<h5 class="indent">Male: <%- info['dem-male-pct'] %> </h5>
+					<h5 class="indent">Female: <%- info['dem-fem-pct'] %> </h5>
+					<h5 class="indent">White: <%- info['dem-white-pct'] %> </h5>
+					<h5 class="indent">Black: <%- info['dem-baa-pct'] %> </h5>
+					<h5 class="indent">Asian: <%- info['dem-aian-pct'] %> </h5>
+					<h5 class="indent">African: <%- info['dem-a-pct'] %> </h5>
+					<h5 class="indent">Native Hawaiian / Pacific Islander: <%- info['dem-nhpi-pct'] %> </h5>
+					<h5 class="indent">Hispanic or Latino: <%- info['dem-hl-pct'] %> </h5>
+					<h5 class="indent">Two or More Races: <%- info['dem-two-pct'] %> </h5>
+					<h4>Median Income: $<%- info['med-income'] %></h4>
+					<h4>Owner Occupancy: <%- info['owner-occ'] %>%</h4>
+					<h4>Total Solar Installations: <%- info['total-solar'] %></h4>
+					<h5 class="indent">Non-Residential: <%- info['nonres-solar'] %> </h5>
+					<h5 class="indent">Residential: <%- info['res-solar'] %> </h5>
+				</div>
+			</div>
+			-->
+			<div class="col-md-6">
+				<div id="installations">
+					<h3>Total Solar Installations</h3>
+					<svg></svg>
+				</div>
+			</div>
+		</div>
+		<div id="banner">
+			<div class="row">
+				<div class="col-md-4">
+					<img id="uga" src="/images/uga.png"/>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<img id="doe" src="/images/doe.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+
+.jumbotron
+{
+	/*margin-top: 25px;*/
+	/*margin-left: 3%;*/
+	width: 100%; /*96*/
+	text-align: center;
+	background-color: #F2F2F2;
+}
+
+#searchbar
+{
+	width: 50%;
+	display: inline-block;
+}

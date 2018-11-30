@@ -1,0 +1,67 @@
+nav
+{
+	/*height: 70px;*/
+	height: 11%;
+	width: 100%;
+	color: black; /*white*/
+	background-color: #D6D2C4; /*Creamery*/
+	/*background-color: #9EA2A2; /*Stegeman*/
+}
+
+nav ul
+{
+	margin-top: 1%;
+}
+
+nav ul li a, nav ul li a:visited,
+nav ul li a:hover
+{
+	color: black;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+#logoLink
+{
+	/*height: 60%;*/
+	width: 15%;
+	margin-right: 2%;
+}
+
+#logo
+{
+	height: 100%;
+	width: 100%;
+}
+
+
+.row
+{
+	max-width: 100%;
+	margin: 0;
+}
+
+#banner
+{
+	/*height: 40%; /*40%*/
+	height: 30%;
+	width: 100%;
+	background-color: #BA0C2F;
+}
+
+#uga
+{
+	/*height: 60%;*/
+	width: 100%;
+	margin-top: 10%;
+}	
+
+#doe
+{
+	margin-top: 10%;
+	width: 100%; /*90*/
+	/*margin-right: 10%;*/
+}

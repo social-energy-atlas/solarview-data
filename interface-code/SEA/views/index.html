@@ -1,0 +1,308 @@
+<!doctype hmtl>
+<html>
+	<head>
+		<title>Social Energy Atlas | Data</title>
+		<link rel="stylesheet" href="/css/jquery-ui.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/leaflet.css">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/base.css">
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/jquery-ui.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/leaflet.js"></script>
+		<script src="/js/index.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm">
+			<a id="logoLink" href="http://sea.galib.uga.edu">
+				<img id="logo"  src="/images/sea-logo.png"/>
+			</a>
+			<ul class="nav navbar-nav">
+				<!--<li id="solarviewLink" class="nav-item"><a href="/">Solar View</a></li>-->
+				<li id="solarviewLink" class="nav-item"><a href="/solarview">Solar View</a></li>
+			</ul>
+			<form id=searchform class="form-inline ml-auto" action='/solarview/result' method='post'>
+			<!--<form id=searchform class="form-inline ml-auto" action='/result' method='post'>-->
+				<input id="searchbar" name="searchbar" class="form-control" 
+					type="text" placeholder="county"/>
+				<button id="searchbtn" class="btn btn-primary" type="submit">
+					Search
+				</button>
+			</form>
+		</nav>
+		<div class="row">
+			<div class="col-md-9 p-0">
+				<div id="mapid"></div>
+			</div>
+			<div class="col-md-3 p-0">
+				<div id="accordion">
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#county">
+							<div class="card-header">
+								County
+								 <img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+							
+						</a>
+						<div id="county" class="collapse">
+							<div id="countyList" class="card-body">
+								List of Counties...
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#solar">
+							<div class="card-header">
+								Existing Solar Installations
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="solar" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<label class="form-check-label">
+									<input id="res" type="checkbox" 
+										class="form-check-input">
+									Residential
+								</label>
+								<label class="form-check-label">
+									<input id="nonres" type="checkbox" 
+										class="form-check-input">
+									Non-Residential
+								</label>
+								
+								<label class="form-check-label">
+									<input id="utility" type="checkbox" 
+										class="form-check-input">
+									Utility-scale
+								</label>
+								<label class="form-check-label">
+									<input id="unclassified" type="checkbox" 
+										class="form-check-input">
+									Unclassified
+								</label>
+								<label class="form-check-label">
+									<input id="none" type="checkbox" 
+										class="form-check-input">
+									No Installations Known
+								</label>
+								
+								<button id="solarSearch" class="btn btn-primary">
+									Search	
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#income">
+							<div class="card-header">
+								Median Income
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="income" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="incomeSlider"></div>
+								$<input id="incomeMin" class="rangeNumber" 
+									type="number"
+									step="0.01"
+									value="0"/>
+								-
+								$<input id="incomeMax" class="rangeNumber"
+									type="number" 
+									step="0.01"
+									value="100000"/>
+								<button id="incomeSearch" class="btn btn-primary">
+									Search	
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#owner">
+							<div class="card-header">
+								Owner-Occupancy
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="owner" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="ownerSlider"></div>
+
+								<input id="ownerMin" class="rangeNumber" 
+									type="number"
+									step="0.01"
+									value="0"/>%
+								-
+								<input id="ownerMax" class="rangeNumber"
+									type="number" 
+									step="0.01"
+									value="100"/>%
+								<button id="ownerSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#suitable">
+							<div class="card-header">
+								Average Percent Suitable
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="suitable" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="suitableSlider"></div>
+
+								<input id="suitableMin" class="rangeNumber" 
+									type="number"
+									step="0.01"
+									value="0"/>%
+								-
+								<input id="suitableMax" class="rangeNumber"
+									type="number" 
+									step="0.01"
+									value="100"/>%
+								<button id="suitableSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#homeValue">
+							<div class="card-header">
+								Median Home Value Index (price per sq/ft)
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="homeValue" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="homeValueSlider"></div>
+
+								$<input id="homeValueMin" class="rangeNumber" 
+									type="number"
+									step="0.01"
+									value="0"/>
+								-
+								$<input id="homeValueMax" class="rangeNumber"
+									type="number" 
+									step="0.01"
+									value="150"/>
+								<button id="homeValueSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#rentalValue">
+							<div class="card-header">
+								Median Home Rental Index (price per sq/ft)
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="rentalValue" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="rentalValueSlider"></div>
+
+								$<input id="rentalValueMin" class="rangeNumber" 
+									type="number"
+									step="0.01"
+									value="0"/>
+								-
+								$<input id="rentalValueMax" class="rangeNumber"
+									type="number" 
+									step="0.01"
+									value="1"/>
+								<button id="rentalValueSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#population">
+							<div class="card-header">
+								Population Total
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="population" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="populationSlider"></div>
+
+								<input id="populationMin" class="rangeNumber" 
+									type="number"
+									step="1"
+									value="0"/>
+								-
+								<input id="populationMax" class="rangeNumber"
+									type="number" 
+									step="1"
+									value="1100000"/>
+								<button id="populationSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<a class="card-link collapsed" data-toggle="collapse" href="#household">
+							<div class="card-header">
+								Number of Households	
+								<img src="/solarview/images/open-iconic/svg/chevron-bottom.svg"
+									class="icon" alt="chevron-bottom"/>
+							</div>
+						</a>
+						<div id="household" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div id="householdSlider"></div>
+
+								<input id="householdMin" class="rangeNumber" 
+									type="number"
+									step="1"
+									value="0"/>
+								-
+								<input id="householdMax" class="rangeNumber"
+									type="number" 
+									step="1"
+									value="400000"/>
+								<button id="householdSearch" class="btn btn-primary">
+									Search	
+								</button>
+
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div id="banner">
+			<div class="row">
+				<div class="col-md-4">
+					<img id="uga" src="/images/uga.png"/>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<img id="doe" src="/images/doe.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype hmtl>
+<html>
+	<head>
+		<title>Social Energy Atlas | Invalid Result</title>
+		<%- include('partials/header'); %>
+		<link rel="stylesheet" href="/css/invalid.css">
+	</head>
+	<body>
+		<%- include('partials/navbar'); %>
+		<div class="row">
+			<div class="jumbotron">
+				<form action='/result' method='post'>
+					<input id="searchbar" name="searchbar" class="form-control" 
+						type="text" value="<%- query %>"/>
+					<button id="searchbtn" class="btn btn-primary" type="submit">
+						Search
+					</button>
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html

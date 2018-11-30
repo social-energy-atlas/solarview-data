@@ -1,0 +1,108 @@
+
+a, a:hover, a:visited, .hideButton
+{
+	color: #BA0C2F;
+}
+
+.hideButton
+{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+
+.key
+{
+	float: left;
+}
+
+.value
+{
+	float: right;
+}
+
+#data
+{
+	max-height: 500px;	
+	overflow: auto;
+}
+
+#mapid
+{
+	/*height: 500px;*/
+	height: 625px;
+	width: 100%;
+}
+
+#demo, #status, #social, #field,
+#adoption, #installations h2, h1,
+#assigned
+{
+	text-align: center;
+}
+
+#demo, #social, #mapid, h1, h4
+{
+	margin-top: 5%;
+}
+
+#adoption
+{
+	font-style: italic; 
+}
+
+#interviewer
+{
+	/*margin-top: 10%;*/
+	display: inline;
+	/*margin: 0 auto;*/
+	/*text-align: center;*/
+	/*margin-left: 200px;*/
+}
+
+#person
+{
+	/*margin-left: 20%;*/
+	display: inline;
+	font-size: 24px;
+}
+
+#bio
+{
+	margin-top: 5%;
+}
+
+.indent
+{
+	text-indent: 8%;
+}
+
+#installations
+{
+	margin-top: 10%;
+	margin-bottom: 5%;
+}
+
+
+svg
+{
+	margin: auto;
+}
+
+/*
+.bar-chart
+{
+	background-color: #c7d9d9;
+}
+*/
+
+svg rect
+{
+	fill: gray;
+}
+
+.standout
+{
+	fill: blue;
+}

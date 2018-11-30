@@ -1,0 +1,12 @@
+Node.js: MIT
+Express: MIT
+Body-Paraser: MIT
+Request.js: Apache v2.0
+Leaflet: BSD-2-Clause
+Leaflet.Shapfile.js: MIT
+Solr: Apache v2.0
+Bootstrap 4: MIT
+Open-Iconic: MIT
+JQuery: MIT
+JQuery-UI: MIT
+QGIS: GNU GPLv2
